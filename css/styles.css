@@ -1,0 +1,23 @@
+@import "reset.css";
+@import "mobile.css";
+@import "userbox.css";
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
+
+
+body{
+    background-color : gray;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    font-family: 'Sunflower', sans-serif;
+    color : #494949;
+}
+
+a{
+    color : #494949;
+}
+
+a:hover{
+    color : #E9606F;
+}
