@@ -3,6 +3,9 @@
 @import "userbox.css";
 @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 
 body{
     background-color : gray;
