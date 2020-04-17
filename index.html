@@ -1,60 +1,37 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <title>오늘 뭐 하지?</title>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-      integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css"/>
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html 환영합니다.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--
+        처음에 접속하면 ,사용자가 등록되어 있지 않다는 화면 또는  
+        등록된 사용자를 표시하는 화면을 만들어야 합니다.
+        로그인의 경우 로컬 상에서 시간이 지나면 지워지도록 하고, 
+        화면이 바뀔 때 마다 설정된 시간이 변경되도록 설정하는 게 좋을 듯 합니다.
+    -->
+    <mian class="main">
+        <form class="js-manager__form form hiding">
+            <input class="js-manager__name" type="text" placeholder="관리자명"/>
+            <input class="js-manager__pwd1" type="password" placeholder="비밀번호 입력">
+            <input class="js-manager__pwd2" type="password" placeholder="비밀번호 확인">
+            <input class="js-manager__submit" type="submit" value="등록">
+        </form>
 
-  <body>
-    <div class="out-form">      
-      <div class="in-form">
-        <header class="header">
-          <i class="fas fa-bars"></i>
-          <h1>Home</h1>
-          <i class="fas fa-cog"></i>
-        </header>
-        <main class="main">
-          <div class="user__list">
-              <div class="user__box user__checked">                  
-                <div class="user__icon">
-                  <img class="user__avatar g-avatar" src="images/user01.jpeg">
-                  <span class="user__name"> 홍기주</span>
-                </div>
-                <div class="user__check">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-              </div>
-              <div class="user__box">
-                <div class="user__icon">
-                  <img class="user__avatar g-avatar" src="images/user02.jpg">
-                  <span class="user__name"> 홍기찬</span>
-                </div>
-              </div>
-              <div class="user__box">
-                <div class="user__icon">
-                  <img class="user__avatar g-avatar" src="images/user03.jpg">
-                  <span class="user__name"> 권다애</span>
-                </div>               
-              </div>
-          </div>
-          <input class="user__login" type="button" value="입장하기">
-        </main>
-        <footer class="bottom-bar">
-          <a href="index.html">
-            <i class="fas fa-home"></i>
-          </a>
-          <i class="fas fa-cloud-meatball"></i>
-          <i class="far fa-edit"></i>
-          <i class="far fa-sticky-note"></i>
-        </footer>
-      </div>
-    </div>
-  </body>
+        <ul class="js-user__list">
+            
+        </ul>
+        <div>
+        "Son For ToDo"에 오신 것을  환영합니다.<br>
+        블라블라블라. (로컬 저장소를 위한 웹앱 입니다.)</br>
+        기타 사용에 관련된 설명들을 블라 블라 블라.<br>
+
+        사용하시려면 관리자를 등록하셔야 합니다.<br>
+        </div>
+    </mian>
+    <script src="js/main.js"></script>
+</body>
 </html>
