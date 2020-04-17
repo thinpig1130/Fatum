@@ -1,27 +1,26 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import 'basic.css';
+@import 'userlist.css';
+@import 'formbox.css';
 
-/*=========================================
- *           임시스타일 정의 
-=========================================*/  
-
-.main {
-    width : 100%;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/****  필수 스타일 정의 ****/
+* {
+  box-sizing: border-box;
 }
 
-.form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+body {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #b5d7f2;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
 }
 
-
-/**********************필수 스타일 정의************************/
+/**** js 기능을 위한 css ****/
 .hiding {
-    display: none;
+  display: none;
 }

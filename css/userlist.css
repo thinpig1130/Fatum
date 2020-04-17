@@ -1,0 +1,52 @@
+.user__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto;
+}
+.user__list > li {
+  position: relative;
+  margin: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  border: 3px solid rgba(181, 215, 242, 1);
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.user__list img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.user__list div {
+  position: absolute;
+  color: #ea6a58;
+  top: 10px;
+  right: 10px;
+}
+
+.user__list > li:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.user__list span {
+  margin: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.user__list > .checked {
+  border: 3px solid #ea6a58;
+  opacity: 1;
+}

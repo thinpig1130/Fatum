@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index screen</title>
+    <title>사용자 관리 화면</title>
     <link rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
         integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" 
@@ -21,10 +21,26 @@
             </div>
         </div>
         <div class="main">
+            <header class="userbar" >
+                <div class="userbar__plus">
+                    <i class="fas fa-user-plus"></i>
+                    <div class="user__inputbox">
+                        <form class="js-user__form form">
+                            <input type="text" placeholder="이름">
+                            <input type="text" placeholder="img 파일명( 예: images/user.jpeg)">
+                            <span>입력 후 Enter</span>             
+                        </form>
+                    </div>
+                </div>
+                <div class="userbar__minus">
+                    <i class="fas fa-user-minus"></i>
+                </div>
+            </header>
+
+
             <div class="js-user__list user__list">
                 
             </div>
-            <input class="js-login-button " type="button" value="입장하기">
         </div>
     </div>
     <script src="js/const.js"></script>
