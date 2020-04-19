@@ -1,0 +1,32 @@
+.start__box {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  color: #29509d;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.form {
+  width: 300px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form input {
+  padding: 15px 30px;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid #29509d;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
