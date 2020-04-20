@@ -23,17 +23,24 @@
         </div>
         <div class="main">
             <form class="admin__authentication">
-                <input type="password" placehoder="비밀번호를 입력 후 Enter">
+                <input type="password" placeholder="비밀번호를 입력 후 Enter">
                 <span class="admin__msg"></span>
             </form>
            <div class="admin">
                 <div class="admin__icon">
-                    <div>
+                    <div class="admin__icon-user-plus">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <div>
+                    <div class="admin__icon-user-minus">
                         <i class="fas fa-user-minus"></i>
                     </div>
+                </div>
+                <div class="js-admin__user-plus">
+                    <form class="user-plus">
+                        <input class="js-user-plus__name" type="text" placeholder="이름을 입력하세요.">
+                        <input class="js-user-plus__avatar" type="text" placeholder="이미지 주소 (예 images/avatar01.jpeg)">
+                        <input class="js-user-plus__button" type="submit" value="등록">
+                    </form>
                 </div>
                 <div class="js-date__list">
                     //기본적으로 오늘 날짜 출력.

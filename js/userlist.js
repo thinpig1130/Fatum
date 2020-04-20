@@ -36,17 +36,8 @@ function selectUser(event) {
 
 // 저장된 User목록 을 출력하는 함수.
 function showUsers(user) {
-  const li = document.createElement('li');
-  const avatar = document.createElement('img');
-  const span = document.createElement('span');
-
-  li.id = user.id;
-  span.innerHTML =
-    user.name + (user.id == '1' ? ' <i class="fas fa-crown"></i>' : '');
-  avatar.src = user.avatar;
-
-  li.appendChild(avatar);
-  li.appendChild(span);
+  console.log(user + "showUser");
+  let li = showUser(user);
   userListDiv.insertBefore(li, userListDiv.firstChild);
 
   li.addEventListener('click', selectUser);
@@ -55,10 +46,11 @@ function showUsers(user) {
 function loadUsers() {
   const userList = localStorage.getItem(USERS_LS);
   if (userList !== null) {
-    const parseUserList = JSON.parse(userList);
-    parseUserList.forEach(function (user) {
+    users = JSON.parse(userList);
+    console.log(users);
+    users.forEach(function (user) {
       showUsers(user);
-      users.push(user);
+      //users.push(user);
     });
   } else {
     location.replace('start.html');
