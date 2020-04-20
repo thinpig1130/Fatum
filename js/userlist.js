@@ -36,7 +36,6 @@ function selectUser(event) {
 
 // 저장된 User목록 을 출력하는 함수.
 function showUsers(user) {
-  console.log(user + "showUser");
   let li = showUser(user);
   userListDiv.insertBefore(li, userListDiv.firstChild);
 
@@ -47,10 +46,8 @@ function loadUsers() {
   const userList = localStorage.getItem(USERS_LS);
   if (userList !== null) {
     users = JSON.parse(userList);
-    console.log(users);
     users.forEach(function (user) {
       showUsers(user);
-      //users.push(user);
     });
   } else {
     location.replace('start.html');

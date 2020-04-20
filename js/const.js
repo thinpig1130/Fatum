@@ -23,19 +23,13 @@ function CurrentUser(user) {
   this.date = new Date();
 }
 
-function ToDo(index, content, completed){
+function ToDo(index, content) {
   this.index = index; //list 번호
-  this.content = content; //todo 내용. 
-  this.completed = completed; //ture or flase.
+  this.content = content; //todo 내용.
+  this.completed = false; //ture or flase.
 }
 
-function ToDoGroup(userId){
-  this.userId = userId;
+function ToDoGroup(dateId) {
+  this.dateId = dateId;
   this.todos = [];
-
-  prototype.setToDo = function(str){
-    const todo = new ToDo(todos.length, str, false);
-    this.todos.push(todo);
-  }
 }
-
