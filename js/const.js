@@ -22,3 +22,20 @@ function CurrentUser(user) {
   this.name = user.name;
   this.date = new Date();
 }
+
+function ToDo(index, content, completed){
+  this.index = index; //list 번호
+  this.content = content; //todo 내용. 
+  this.completed = completed; //ture or flase.
+}
+
+function ToDoGroup(userId){
+  this.userId = userId;
+  this.todos = [];
+
+  prototype.setToDo = function(str){
+    const todo = new ToDo(todos.length, str, false);
+    this.todos.push(todo);
+  }
+}
+

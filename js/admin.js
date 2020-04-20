@@ -96,7 +96,6 @@ function loadUsers() {
     users.forEach(function (user){
       const li = showUser(user);
       userListDiv.insertBefore(li, userListDiv.firstChild);
-      //li.addEventListener('click', visibleToDo);
     });
   } else {
     alert('잘못된 접근입니다.');
