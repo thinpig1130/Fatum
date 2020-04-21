@@ -1,0 +1,32 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import 'statusbar.css';
+@import 'header.css';
+@import 'nav.css';
+@import 'users.css';
+@import 'todo.css';
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #020202;
+    font-family: 'Do Hyeon', cursive;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .g-avatar{
+    width :60px;
+    border-radius: 38%;
+  }
+
+  main{
+    padding : 15px 20px 15px 20px;
+  }

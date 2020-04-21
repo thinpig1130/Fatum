@@ -1,0 +1,32 @@
+.nav{ 
+    position: fixed;
+    width : 100%;
+    background-color: #9bcdba;
+    padding : 0px 50px 10px 50px;
+    left:0px;
+    bottom: 0px;
+    border-top : 1px solid #a4cec9;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #1b3625;
+}
+
+.nav .nav__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .nav__list li{
+    padding : 20px 10px 10px 10px;
+}
+
+
+.nav .nav__list-item a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .nav__list-item i{
+    font-size: 28px;
+}

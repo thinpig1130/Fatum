@@ -1,0 +1,35 @@
+.users .users__user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.users .user__column{
+    display: flex;
+    align-items: center;
+}
+
+.users .user__column span{
+    margin: 10px;
+}
+
+.users .user__name{
+    font-size: 18px;
+}
+
+.users .user__things{
+    font-family: 'Gamja Flower', cursive;
+}
+
+.users .user__cnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 20px;
+    height: 20px;
+    background-color: #9ccfbc;
+    border-radius:50%;
+    color: #1b3625;
+}

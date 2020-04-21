@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set_users.html</title>
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" 
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="status-bar">
+        <span class="status-bar__clock">
+            12:55:16
+        </span>
+        <span class="status-bar__date">
+            2020년 4월 21일
+        </span>
+    </div>
+    <header class="header">
+        <div class="header__column">
+            <i class="fas fa-users"></i>
+            <span>사용자 관리</span>
+        </div>
+        <div class="header__column">
+            <i class="fas fa-user-plus"></i>
+            <i class="fas fa-user-minus"></i>
+        </div>
+    </header>
+
+    
+    <mian class="musers">
+        <div class="musers__puls">
+            <form class="musers__form">
+                <input class="musers__name" type="text" placeholder="사용자 이름">
+                <div class="musers__avatar">
+                    <img class="muser__avatar g-avatar" src="images/01.jpg">
+                    <img class="muser__avatar g-avatar" src="images/02.jpg">
+                    <img class="muser__avatar g-avatar" src="images/03.jpg">
+                </div>
+                <input class="musers__submit" type="submit" value="등록">
+            </form>
+        </div>
+        <ul class="musers__minus">
+            <li class="musers__muser muser">
+                <img class="muser__avatar g-avatar"src="images/01.jpg">
+                <span>홍기주</span>
+                <i class="far fa-times-circle"></i>
+            </li>
+            <li class="musers__muser muser">
+                <img class="muser__avatar g-avatar"src="images/02.jpg">
+                <span>홍기찬</span>
+                <i class="far fa-times-circle"></i>
+            </li>
+            <li class="musers__muser muser">
+                <img class="muser__avatar g-avatar"src="images/03.jpg">
+                <span>권다애</span>
+                <i class="far fa-times-circle"></i>
+            </li>
+        </ul>
+    </mian>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item">
+                <a href="todo.html">
+                    <i class="far fa-list-alt"></i>
+                    <span>To do list</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Graph</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="far fa-envelope"></i>
+                    <span>Message</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

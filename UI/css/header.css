@@ -1,0 +1,23 @@
+.header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #078b54;
+    padding: 10px 23px 10px 23px;
+    font-size: 18px;
+}
+
+.header__column:first-child{
+    font-size: 26px;
+    color :#ffffff;
+    font-family: 'Gamja Flower', sans-serif;
+}
+
+.header__column:first-child  i{
+    padding-right: 10px;
+}
+
+.header__column:last-child *{
+    padding-left: 4px;
+}

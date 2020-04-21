@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo.html</title>
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" 
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="status-bar">
+        <span class="status-bar__clock">
+            12:55:16
+        </span>
+        <span class="status-bar__date">
+            2020년 4월 21일
+        </span>
+    </div>
+    <header class="header">
+        <div class="header__column">
+            <i class="fas fa-clipboard-list"></i>
+            <span>To do list</span>
+        </div>
+        <div class="header__column">
+            <span>
+                <i class="fas fa-chevron-left"></i>
+                <span> 4월 21일 </span>
+                <i class="fas fa-chevron-right"></i>
+            </span>
+            <span>
+                <i class="far fa-square"></i>
+            </span>
+            <span>
+                <i class="far fa-clone"></i>
+            </span>
+            <span>
+                <a href="todo_manager.html"><i class="fas fa-crown"></i></a>
+            </span>
+        </div>
+    </header>
+
+    <main class="todos">
+        <ul class="todos__list">
+            <li class="todos__todo todo checked">
+                <span>1차 프로젝트 완성</span>
+                <input type="checkbox" checked>
+            </li>
+            <li class="todos__todo todo">
+                <span>설거지와 밀린 집안 일</span>
+                <input type="checkbox">
+            </li>
+            <li class="todos__todo todo">
+                <span>정보처리기사 Chapter1 공부</span>
+                <input type="checkbox">
+            </li>
+            <li class="todos__todo todo checked">
+                <span>고슴도치 먹이 주기</span>
+                <input type="checkbox" checked>
+            </li>
+        </ul>
+    </main>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item">
+                <a href="todo.html">
+                    <i class="far fa-list-alt"></i>
+                    <span>To do list</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Graph</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="far fa-envelope"></i>
+                    <span>Message</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
