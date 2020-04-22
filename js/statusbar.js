@@ -1,4 +1,5 @@
-const clockContainer = document.querySelector(".js-clock");
+const clockContainer = document.querySelector(".js-clock"),
+ todayContainer = document.querySelector(".js-today");
 
 function getDate(){
     const dateObj = new Date(),
@@ -12,8 +13,15 @@ function getDate(){
     return dateId;
 }
 
-function printToday(dateId){
-
+function getDateTostring(dateId){
+    const year = parseInt(dateId / 100000),
+    month = parseInt(dateId / 1000) % 100,
+    date = parseInt(dateId / 10) % 100,
+    day = parseInt(dateId %10),
+    dayString = ['일', '월', '화', '수','목', '금', '토'];
+    
+    let dateString = year + '년 ' + month + '월 ' + date + 
+        '일 (' + dayString[day] +"요일)";
 
     return dateString;
 }
@@ -25,15 +33,20 @@ function getTime(){
     const seconds = date.getSeconds();
 
     clockContainer.innerText = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds}`;    
+    
+    //0시 0분 0초 (날짜가 바뀔경우)
+    if(hours===0 && minutes ===0 && seconds === 0){
+        todayContainer.innerText = getDateTostring(getDate());
+    }
 }
 
-
-
-
 function init(){
+    //1초마다 초시계가 돌아가도록 setting
     setInterval(getTime, 1000);
-    getDate();
-    printToday();
+    //오늘 날짜를 dateId 형태로 반환.
+    const dateId = getDate();
+    //날짜를 출력형태로 전환 후 출력
+    todayContainer.innerText = getDateTostring(dateId);
 };
 
 init();
