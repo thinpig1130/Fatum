@@ -1,0 +1,31 @@
+.g-avatar-set{
+    background-color:rgba(255, 255, 255,0.5);
+    padding: 10px;
+    display: inline-block;
+    white-space:nowrap;
+    width : 90%;
+    overflow-x:auto;
+    overflow-y: hidden;
+    border-radius: 20px;
+    border : 5px solid rgba(255, 255, 255,0);
+    border-left: 20px solid rgba(255, 255, 255,0);
+    border-right: 20px solid rgba(255, 255, 255,0);
+}
+  
+.g-button{
+    background-color: #e7b058;
+    padding : 7px 20px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+}
+
+.g-input{
+    background-color :rgba(255, 255, 255,0);
+    padding : 7px 15px;
+    margin: 10px;
+    border: none;
+    border-bottom: 3px solid #078c54;
+    border-radius: 10px ;
+}

@@ -1,0 +1,21 @@
+.musers{
+    padding:0px;
+}
+.musers .musers__puls{
+    width : 100%;
+    background-color:#f0f5da;
+    /*position: absolute;*/
+    padding-bottom: 10px;
+}
+
+.musers .musers__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.musers .musers__minus{
+    padding : 20px;
+}

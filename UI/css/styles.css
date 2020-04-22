@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 @import 'statusbar.css';
+@import 'formbasic.css';
+@import 'todobasic.css';
 @import 'header.css';
 @import 'nav.css';
 @import 'users.css';
 @import 'todo.css';
+@import 'start.css';
+@import 'musers.css';
+@import 'todomanager.css';
 
 * {
     box-sizing: border-box;
