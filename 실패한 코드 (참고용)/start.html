@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index screen</title>
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" 
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pad">
+        <div class="js-statusbar statusbar">
+            <i class="fas fa-synagogue"></i>
+            <div class="statusbar__colunm">
+                <span></span>
+                <input class="logout-button" type="button" value="logout">
+                <input class="admin-button" type="button" value="admin">
+            </div>
+        </div>
+        <div class="main">
+           <div class="realseNote">
+           릴리즈 노트 / 
+           </div>
+           <div class="start__box">
+                <span>Get Started!</span>
+                <form class="js-start__form start__form form">
+                    <input class="js-form__name" type="text" placeholder="이름을 입력하세요.">
+                    <input class="js-form__pwd1" type="password" placeholder="비밀번호 입력">
+                    <input class="js-form__pwd2" type="password" placeholder="비밀번호 확인">
+                    <input class="js-form__avatar" type="text" placeholder="이미지 주소 (예 images/avatar01.jpeg)">
+                    <input class="js-form__button" type="button" value="관리자 등록">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/const.js"></script>
+    <script src="js/usebase.js"></script>
+    <script src="js/statusbar.js"></script>
+    <script src="js/start.js"></script>
+</body>
+</html>

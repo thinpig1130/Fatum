@@ -3,34 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index screen</title>
+    <title>index.html</title>
     <link rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" 
         integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" 
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="pad">
-        <div class="js-statusbar statusbar">
-            <i class="fas fa-synagogue"></i>
-            <div class="statusbar__colunm">
-                <span></span>
-                <input class="logout-button" type="button" value="logout">
-                <input class="admin-button" type="button" value="admin">
-            </div>
-        </div>
-        <div class="main">
-            <div class="js-user__list user__list">
-                
-            </div>
-            <input class="js-login-button " type="button" value="입장하기">
-        </div>
+    <div class="status-bar">
+        <span class="js-clock status-bar__clock">
+            12 : 55 : 16
+        </span>
+        <span class="status-bar__date">
+            2020. 4. 21. 화요일
+        </span>
     </div>
-    <script src="js/const.js"></script>
-    <script src="js/usebase.js"></script>
+    <header class="header">
+        <div class="header__column">
+            <i class="fas fa-user"></i>
+            <span>사용자 선택</span>
+        </div>
+        <div class="header__column">
+            <a href="set_users.html"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+    <main class="users">
+        <ul class="users__list">
+            <li class="users__user user">
+                <div class="user__column">
+                    <img class="user__avatar g-avatar"src="images/03.jpg">
+                    <span class="user__name">권다애</span>
+                </div>
+                <div class="user__column">
+                    <span class="user__things">Things to do today</span>
+                    <span class="user__cnt">5</span>     
+                </div>
+            </li>
+            <li class="users__user user">
+                <div class="user__column">
+                    <img class="user__avatar g-avatar"src="images/02.jpg">
+                    <span class="user__name">홍기찬</span>
+                </div>
+                <div class="user__column">
+                    <span class="user__things">Things to do today</span>
+                    <span class="user__cnt">8</span>     
+                </div>
+            </li>
+        </ul>
+    </main>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item">
+                <a href="todo.html">
+                    <i class="far fa-list-alt"></i>
+                    <span>To do list</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Graph</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="">
+                    <i class="far fa-envelope"></i>
+                    <span>Message</span>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script src="js/test.js"></script>
     <script src="js/statusbar.js"></script>
-    <script src="js/userlist.js"></script>
 </body>
 </html>
