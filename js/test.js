@@ -14,7 +14,7 @@ function testSetUsers(){
 }
 
 function init(){
-   //testSetUsers();
+   testSetUsers();
 }
 
 init();
