@@ -17,8 +17,11 @@
 
 .nav .nav__list li{
     padding : 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
 }
-
 
 .nav .nav__list-item a{
     display: flex;

@@ -20,5 +20,5 @@ function User(id, name, avater) {
 function CurrentUser(user) {
     this.id = user.id;
     this.name = user.name;
-    this.date = new Date();
+    this.date = Date.now();
 }

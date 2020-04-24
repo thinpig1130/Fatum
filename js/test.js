@@ -1,3 +1,4 @@
+
 function testSetUsers(){
     let users = []; 
     let user1 = new User(0, '권다애', 'images/03.jpg'),
@@ -13,7 +14,7 @@ function testSetUsers(){
 }
 
 function init(){
-    testSetUsers();
+   //testSetUsers();
 }
 
 init();

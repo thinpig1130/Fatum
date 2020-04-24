@@ -49,17 +49,42 @@ function createUserNode(user){
 
     return li;
 }
+
+function selectCurrentUser(e){
+    const users = getUsers();
+        currentUser = new CurrentUser(users[parseInt(this.id)]);
+
+    //console.log(currentUser);
+    setCurrentUser(currentUser);
+
+    //localStorage.setItem(LS_CURRENTUSER, JSON.stringify(currentUser));
+    location.replace('todo.html');
+}
+
 function printUsers(users){
     const userList = document.querySelector('.users__list');
     for(i=0; i < users.length; i++){
         const li = createUserNode(users[users.length-(i+1)]);
         userList.appendChild(li);
+        li.addEventListener('click', selectCurrentUser);
+    }
+}
+
+function loadUser(){
+    const users = getUsers();
+    if(users === null){
+        location.replace('start.html');
+    }else{
+        printUsers(users);
     }
 }
 
 function init(){
-    let users = getUsers();
-    printUsers(users);
+    if(checkConnected()){
+        loadCurrentUser();
+        location.replace('todo.html');
+    }
+    loadUser();
 }
 
 init();
