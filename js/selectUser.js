@@ -1,11 +1,3 @@
-function getUsers(){
-    const users = JSON.parse(localStorage.getItem(LS_USERS));
-    return users;
-}
-function setUser(users){
-    localStorage.setItem(LS_USERS, JSON.stringify(users));
-}
-
 function createUserNode(user){
     const li = document.createElement('li'),
         divAf = document.createElement('div'),

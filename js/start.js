@@ -23,7 +23,7 @@ function checkedAvatar(){
 }
 
 function avatarLoad(cnt){
-    const avatarDiv = document.querySelector('.j-avatar-set'),
+    const avatarDiv = document.querySelector('.start__avatar-set'),
         image = new Image();
 
     image.src= `images/${cnt}.jpg`;
