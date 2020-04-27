@@ -33,4 +33,11 @@
     width: 100%;
 }
 
+.start__avatar{
+    margin-right: 8px;
+}
 
+.checked{
+    border : 4px solid green;
+
+}
