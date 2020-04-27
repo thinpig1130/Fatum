@@ -1,11 +1,3 @@
-function getUsers(){
-    const users = JSON.parse(localStorage.getItem(LS_USERS));
-    return users;
-}
-function setUser(users){
-    localStorage.setItem(LS_USERS, JSON.stringify(users));
-}
-
 function createUserNode(user){
     const li = document.createElement('li'),
         divAf = document.createElement('div'),
@@ -29,7 +21,7 @@ function createUserNode(user){
 
     //console.log(user);
     li.id = `${user.id}`;
-    img.src = user.avatar;
+    img.src = `images/${user.avatar}`;
     if(user.id === 0){
         spanAf.innerHTML = user.name + ' &nbsp;<i class="fas fa-crown"></i>';
     }else{
