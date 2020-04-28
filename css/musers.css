@@ -19,3 +19,7 @@
 .musers .musers__minus{
     padding : 20px;
 }
+
+.musers__avatar *{
+    margin-right: 8px;
+}

@@ -1,5 +1,5 @@
 //form 값을 입력했는지 여부를 검사하는 함수 추가요망.
-function registerUser(e){
+function registerUser(event){
     event.preventDefault();
     const checkedAvatar = document.querySelector(`.${CN_CHECKED}`),
         nameNode = this.querySelector('.start__name'),
@@ -15,12 +15,6 @@ function registerUser(e){
     location.replace('index.html');
 }
 
-function checkedAvatar(){
-    const beforeChecked = document.querySelector(`.${CN_CHECKED}`);
-    
-    if(beforeChecked !== null) beforeChecked.classList.remove(CN_CHECKED);
-    this.classList.add(CN_CHECKED);
-}
 
 function avatarLoad(cnt){
     const avatarDiv = document.querySelector('.start__avatar-set'),
