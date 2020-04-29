@@ -22,3 +22,12 @@ function CurrentUser(user) {
     this.name = user.name;
     this.date = Date.now();
 }
+
+function getIndex(ele) {
+    var i = 0;
+    while((ele = ele.previousSibling) != null ){
+      i++;
+    }
+    return i;
+}
+
