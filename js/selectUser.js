@@ -43,22 +43,24 @@ function createUserNode(user){
 }
 
 function selectCurrentUser(e){
-    const users = getUsers();
-        currentUser = new CurrentUser(users[parseInt(this.id)]);
-
-    //console.log(currentUser);
+    console.log(getIndex(this));
+    const users = getUsers(),
+        currentUser = new CurrentUser(users[users.length - getIndex(this)]);
     setCurrentUser(currentUser);
-
-    //localStorage.setItem(LS_CURRENTUSER, JSON.stringify(currentUser));
     location.replace('todo.html');
 }
 
 function printUsers(users){
     const userList = document.querySelector('.users__list');
     for(i=0; i < users.length; i++){
-        const li = createUserNode(users[users.length-(i+1)]);
-        userList.appendChild(li);
-        li.addEventListener('click', selectCurrentUser);
+        console.log(users[i]);
+        
+        let index = users.length-(i+1);
+        if(users[index].name !== undefined){
+            const li = createUserNode(users[index]);
+            userList.appendChild(li);
+            li.addEventListener('click', selectCurrentUser);
+        }
     }
 }
 

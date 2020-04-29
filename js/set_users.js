@@ -6,7 +6,7 @@ function registerUser(event){
           avatarSrc = (userAvatar.src).split('/');
     
     let users = getUsers();
-    const user = new User(users.length , userName.value, avatarSrc[avatarSrc.length-1]);
+    const user = new User(users[users.length-1].id + 1 , userName.value, avatarSrc[avatarSrc.length-1]);
 
     users.push(user);
     setUsers(users);
@@ -25,28 +25,18 @@ function checkUseAvatar(cnt){
     return bool
 }
 
-function removeUser(event){
-      
+function removeUser(event){      
     const li = this.parentNode,
     ul = li.parentNode;
     let users = getUsers();
     
-    let checkRemove = confirm("'"+ users[li.id].name +
+    console.log(getIndex(li));
+    let checkRemove = confirm("'"+ users[users.length - getIndex(li)].name +
          "'님을 정말로 삭제 하시겠습니까?\n (경고 : 해당 사용자의 등록된 할일 목록들이 함께 삭제 됩니다.)");
     if(checkRemove){
-        let transUsers=[];
         ul.removeChild(li);
-
-        for(i in users){
-            console.log(users[i]);
-            if(i < li.id){
-                transUsers.push(users[i]);            
-            }else if(i>li.id){
-                users[i].id = i-1;
-                transUsers.push(users[i]);
-            }
-        }
-        setUsers(transUsers);
+        users[li.id] = {id:parseInt(li.id)};
+        setUsers(users);
     }
     location.reload(true); 
 }
@@ -55,10 +45,9 @@ function activationMinus(){
     const lis = document.querySelectorAll('.musers__muser'),
         btnCheck = lis[0].querySelector('.fa-times-circle');
 
-    //console.log(btnCheck);
     if(btnCheck === null){
         for(i=0; i< lis.length; i++){
-            //console.log(i);
+
             if(lis[i].id !== '0'){
             const delBtn = document.createElement('i');
             delBtn.classList.add('far');
@@ -127,8 +116,11 @@ function usersLoad(){
     }else{
         const userUl = document.querySelector('.musers__minus');
         for(i=0; i < users.length; i++){
-            const li = createUserLi(users[users.length-(i+1)]);
-            userUl.appendChild(li);
+            let index = users.length-(i+1);
+            if(users[index].name !== undefined){
+                const li = createUserLi(users[index]);
+                userUl.appendChild(li);
+            }
         }
     }
 
