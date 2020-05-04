@@ -2,6 +2,6 @@
     border-bottom: 3px solid #f56b57;
 }
 
-.todos__list .checked{
+.todos .checked{
     border-bottom: 3px solid teal;
 }
