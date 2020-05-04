@@ -33,7 +33,7 @@ function loadCurrentUser(){
     const currentUser = getCurrentUser(),
         min = checkConnectedTime(currentUser);
 
-        console.log(min);
+        //console.log(min);
 
     if(min >= 10){
         outCurrentUser();
@@ -43,16 +43,15 @@ function loadCurrentUser(){
     }
 }
 
-/*
+
 function init(){
-    if(checkConnected){
+    if(checkConnected()){
         loadCurrentUser();
     }
 }
 
-
 init();
-*/
+
 
 // 로그인 시점 확인하여
 // 10분이 지났으면 로그아웃 하는 함수.
