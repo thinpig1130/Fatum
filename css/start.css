@@ -37,7 +37,7 @@
     margin-right: 8px;
 }
 
-.checked{
-    border : 4px solid green;
-
+.g-avatar-set .checked {
+    border : 3px solid forestgreen;
 }
+
