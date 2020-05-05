@@ -56,6 +56,7 @@ function printUsers(users) {
   for (i = 0; i < users.length; i++) {
     //console.log(users[i]);
     let index = users.length - (i + 1);
+    //console.log(users[index].name);
     if (users[index].name !== undefined) {
       const li = createUserNode(users[index]);
       userList.appendChild(li);
