@@ -14,21 +14,23 @@ function testSetUsers() {
 
 function testTodos() {
   let saveTestTodos = new TodoList(202005041);
-  saveTestTodos.todos.push(new Todo('할일5/4'));
-  saveTestTodos.todos.push(new Todo('할일5/4ㅇㄹㅇㅇ'));
-  saveTestTodos.todos.push(new Todo('할일5/4 ghghgh'));
+  saveTestTodos.todos.push(new Todo('할일5/4 했나?'));
+  saveTestTodos.todos.push(new Todo('열심히 놀기'));
+  saveTestTodos.todos.push(new Todo('기주 돌보기'));
 
-  let userTodo = [];
-  userTodo.push(saveTestTodos);
+  let userTodos = [];
+  userTodos.push(saveTestTodos);
 
-  saveTestTodos = new TodoList(202005074);
-  saveTestTodos.todos.push(new Todo('할일5/7'));
-  saveTestTodos.todos.push(new Todo('할일5/7ㅇㄹㅇㅇ'));
-  saveTestTodos.todos.push(new Todo('다애할일 1 '));
+  saveTestTodos = new TodoList(202005052);
+  saveTestTodos.todos.push(new Todo('기찬이 할일'));
+  saveTestTodos.todos.push(new Todo('기찬아 사랑해'));
+  saveTestTodos.todos.push(new Todo('여기야 기찬아'));
+  saveTestTodos.todos.push(new Todo('여기야 기찬아2'));
+  saveTestTodos.todos.push(new Todo('여기야 기찬아3'));
 
-  userTodo.push(saveTestTodos);
+  userTodos.push(saveTestTodos);
 
-  localStorage.setItem(0, JSON.stringify(userTodo));
+  setTodos(userTodos, 1);
 }
 
 function init() {

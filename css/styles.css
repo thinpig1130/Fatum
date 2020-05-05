@@ -13,28 +13,32 @@
 @import 'todomanager.css';
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: #ffffff;
-    color: #020202;
-    font-family: 'Do Hyeon', cursive;
-  }
+body {
+  background-color: #ffffff;
+  color: #020202;
+  font-family: 'Do Hyeon', cursive;
+}
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  .g-avatar{
-    width :60px;
-    border-radius: 38%;
-  }
+.g-avatar {
+  width: 60px;
+  border-radius: 38%;
+}
 
-  main{
-    width: 100%;
-    margin-top: 110px;
-    margin-bottom : 70px;
-    padding : 10px 20px 15px 20px;
-  }
+main {
+  width: 100%;
+  margin-top: 110px;
+  margin-bottom: 70px;
+  padding: 10px 20px 15px 20px;
+}
+
+.hiding {
+  display: none;
+}

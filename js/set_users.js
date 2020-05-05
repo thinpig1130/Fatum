@@ -37,7 +37,7 @@ function removeUser(event) {
   console.log(getIndex(li));
   let checkRemove = confirm(
     "'" +
-      users[users.length - getIndex(li)].name +
+      users[li.id].name +
       "'님을 정말로 삭제 하시겠습니까?\n (경고 : 해당 사용자의 등록된 할일 목록들이 함께 삭제 됩니다.)",
   );
   if (checkRemove) {
