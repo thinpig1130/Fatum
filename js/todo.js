@@ -1,5 +1,5 @@
 //사용자에 해당하는 Todos를 모두 반환하는 함수.
-function getTodos() {
+function getUserTodos() {
   const currentUserId = getCurrentUser().id;
   const userTodos = JSON.parse(localStorage.getItem(currentUserId));
   return userTodos;
@@ -7,17 +7,15 @@ function getTodos() {
 
 //요청된 날짜 todos 목록을 반환하는 함수
 function getDateTodos() {
-  let dateId = getParameterByName('date');
-  if (dateId === '') dateId = getDate();
-
-  const userTodos = getTodos();
+  let dateId = getTodoDate();
+  const userTodos = getUserTodos();
   let dateTodos = null;
 
   //해당 사용자의 todolist가 있을때만
   if (userTodos !== null) {
     for (i = 0; i < userTodos.length; i++) {
       //console.log(userTodos[i].dateId);
-      if (userTodos[i].dateId === parseInt(dateId)) {
+      if (userTodos[i].dateId === dateId) {
         dateTodos = userTodos[i].todos;
         //console.log(dateTodos);
         break;
@@ -28,6 +26,33 @@ function getDateTodos() {
   return dateTodos;
 }
 
+//할일을 Done 여부를 변경하는 함수
+function updateTodos(listId, isDone) {
+  const todoDateId = getTodoDate();
+  let userTodos = getUserTodos(),
+    dateTodos = getDateTodos();
+
+  dateTodos[listId].done = isDone;
+  for (x in userTodos) {
+    if (userTodos[x].dateId === todoDateId) userTodos[x].todos = dateTodos;
+  }
+  setTodos(userTodos);
+}
+
+//checkbox 클릭했을 때 event 함수
+function manageTodoDone() {
+  const li = this.parentNode;
+  if (hasClass(li, CN_CHECKED)) {
+    li.classList.remove(CN_CHECKED);
+    updateTodos(li.id, false);
+  } else {
+    li.classList.add(CN_CHECKED);
+    updateTodos(li.id, true);
+  }
+  //console.log(li);
+}
+
+//TodoLi 생성하는 함수
 function createTodoLi(todo) {
   const li = document.createElement('li'),
     span = document.createElement('span'),
@@ -45,6 +70,7 @@ function createTodoLi(todo) {
   }
 
   span.innerText = todo.content;
+  input.addEventListener('click', manageTodoDone);
 
   li.appendChild(span);
   li.appendChild(input);
@@ -52,6 +78,7 @@ function createTodoLi(todo) {
   return li;
 }
 
+//todolist에 목록을 추가하는 함수
 function loadTodos(todos) {
   const todosUl = document.querySelector('.todos__list');
 
@@ -60,11 +87,13 @@ function loadTodos(todos) {
   } else {
     for (x in todos) {
       const li = createTodoLi(todos[x]);
+      li.id = x;
       todosUl.appendChild(li);
     }
   }
 }
 
+//event 함수. 출력하고자 하는 TodoList의 날짜가 변경
 function setDate(dateId, num) {
   //dateId를 날짜 객체로 변환
   const year = parseInt(dateId / 100000),
@@ -82,8 +111,9 @@ function setDate(dateId, num) {
   location.href = `todo.html?date=${dateId}`;
 }
 
+//날짜와 날짜 변경을 위한 icon을 셋팅하는 함수
 function loadTodoDate(dateId) {
-  const todoDate = document.querySelector('.header__todoDate'),
+  const todoDate = document.querySelector('.header__todo-date'),
     dateSpan = todoDate.querySelector('span'),
     beforeIcon = todoDate.querySelector('.j-before'),
     afterIcon = todoDate.querySelector('.j-after');
@@ -107,10 +137,13 @@ function init() {
   if (!checkConnected()) {
     location.replace('index.html');
   }
-  let todos = getDateTodos();
+
+  if (getCurrentUser().id !== 0) {
+    document.querySelector('.header__todo-manager').classList.add(CN_HIDING);
+  }
 
   loadTodoDate();
-  loadTodos(todos);
+  loadTodos(getDateTodos());
 }
 
 init();

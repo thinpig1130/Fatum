@@ -33,14 +33,14 @@ function Todo(content) {
   this.done = false;
 }
 
-// //노드 순번 검사
-// function getIndex(ele) {
-//   let i = 0;
-//   while ((ele = ele.previousSibling) != null) {
-//     i++;
-//   }
-//   return i;
-// }
+//노드 순번 검사
+function getIndex(ele) {
+  let i = 0;
+  while ((ele = ele.previousSibling) != null) {
+    i++;
+  }
+  return i;
+}
 
 //주소창에 입력된 파라미터 값을 찾아오는 함수.(다른 소스 인용)
 function getParameterByName(name) {
@@ -50,4 +50,17 @@ function getParameterByName(name) {
   return results === null
     ? ''
     : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// 노드에 해당 클래스가 존재하는지 검사하는 함수
+function hasClass(node, className) {
+  let result = false;
+  const classArr = node.classList;
+  for (x in classArr) {
+    if (classArr[x] === className) {
+      result = true;
+      break;
+    }
+  }
+  return result;
 }
