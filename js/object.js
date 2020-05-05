@@ -64,3 +64,8 @@ function hasClass(node, className) {
   }
   return result;
 }
+
+function getUsers() {
+  const users = JSON.parse(localStorage.getItem(LS_USERS));
+  return users;
+}

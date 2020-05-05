@@ -26,27 +26,27 @@
             <span>To do list 관리</span>
         </div>
         <div class="header__column">
-            <div>
-                <i class="fas fa-chevron-left"></i>
-                <span> 4월 21일 </span>
-                <i class="fas fa-chevron-right"></i>
+            <div class="header__todo-date">
+                <i class="fas fa-chevron-left j-before"></i>
+                <span></span>
+                <i class="fas fa-chevron-right j-after"></i>
             </div>
-            <div>
-                <i class="fas fa-chevron-left"></i>
-                <span> 권다애 </span>
-                <i class="fas fa-chevron-right"></i>
+            <div class="header__todo-user">
+                <i class="fas fa-chevron-left j-before"></i>
+                <span></span>
+                <i class="fas fa-chevron-right j-after"></i>
             </div>
         </div>
     </header>
 
-    <div class="in-todo">
-        <form class="in-todo__form">
-            <input type="text" placeholder="할 일을 입력하세요.">
-            <i class="far fa-plus-square"></i>
-        </form>
-    </div>
 
-    <mian class="mtodos g-todos">
+    <main class="mtodos g-todos">
+        <div class="in-todo">
+            <form class="in-todo__form">
+                <input type="text" placeholder="할 일을 입력하세요.">
+                <i class="far fa-plus-square"></i>
+            </form>
+        </div>
         <h1><i class="far fa-edit"></i> Things to do</h1>
         <ul class="mtodos__list g-todos__list">
             <li class="mtodos__todo mtodo g-todo">
@@ -66,7 +66,7 @@
                 <i class="far fa-times-circle"></i>
             </li>
         </ul>
-    </mian>
+    </main>
 
     <nav class="nav">
         <ul class="nav__list">
@@ -95,9 +95,11 @@
         </ul>
     </nav>
     <script src="js/object.js"></script>
-    <script src="js/test.js"></script>
     <script src="js/basic.js"></script>
     <script src="js/statusbar.js"></script>
+    <script src="js/todobase.js"></script>
+    <script src="js/manageTodos.js"></script>
+    <script src="js/test.js"></script>
     <script src="js/nav.js"></script>
 </body>
 </html>
