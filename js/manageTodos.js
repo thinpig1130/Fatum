@@ -44,11 +44,126 @@ function loadUser() {
   afterIcon.addEventListener('click', function () {
     setTodoUser(userId, 1);
   });
+
+  return userId;
+}
+
+//delete icon을 눌렀을 때 발생하는 이벤트
+function aaa(){};
+
+//mTodoLi 생성하는 함수
+function createTodoLi(todo) {
+  const li = document.createElement('li'),
+    span = document.createElement('span'),
+    i = document.createElement('i');
+
+  li.classList.add('mtodos__todo');
+  li.classList.add('mtodo');
+  li.classList.add('g-todo');
+  i.classList.add('far');
+  i.classList.add('fa-times-circle');
+
+  if (todo.done) {
+    li.classList.add('checked');
+  }
+
+  span.innerText = todo.content;
+  i.addEventListener('click', aaa);
+
+  li.appendChild(span);
+  li.appendChild(i);
+
+  return li;
+}
+
+//mtodolist에 목록을 추가하는 함수
+function loadTodos(todos) {
+  const todosUl = document.querySelector('.mtodos__list');
+
+  if (todos === null) {
+    todosUl.innerHTML = '<span> 등록된 할일이 없습니다. </span>';
+  } else {
+    for (x in todos) {
+      const li = createTodoLi(todos[x]);
+      li.id = x;
+      todosUl.appendChild(li);
+    }
+  }
+}
+
+// dateid, userid 인자를 받아 목록을 반환하는 함수
+function getTodos(dateId, userId) {
+  const userTodos = JSON.parse(localStorage.getItem(userId));
+  let dateTodos = null;
+  if (userTodos !== null) {
+    for (i = 0; i < userTodos.length; i++) {
+      //console.log(userTodos[i].dateId);
+      if (userTodos[i].dateId === dateId) {
+        dateTodos = userTodos[i].todos;
+        //console.log(dateTodos);
+        break;
+      }
+    }
+  }
+
+  return dateTodos;
+}
+
+function insertTodo(userId, dateId, todos){
+  const todoInsertText = document.querySelector('.in-todo__form input');
+  if(todoInsertText.value===""){
+    alert("할일을 입력하세요.");
+  }else{
+    let userTodos = JSON.parse(localStorage.getItem(userId));
+    let indexNum = -1;
+
+    if(todos===null)todos = [];
+    todos.push(new Todo(todoInsertText.value));
+    
+    if(userTodos===null) userTodos= [new TodoList(dateId)];
+ 
+    for (i = 0; i < userTodos.length; i++) {
+      if (userTodos[i].dateId === dateId) {
+        userTodos[i].todos = todos;
+        indexNum = i;
+        break;
+      }
+    }
+
+    if (indexNum === -1){
+      let addTodoList = new TodoList(dateId);
+      addTodoList.todos = todos;
+      console.log(addTodoList);
+      userTodos.push(addTodoList);
+    }
+
+    console.log(userTodos);
+    setTodos(userTodos, userId);
+
+    location.reload();
+  }
+    //localStorage.setItem(, JSON.stringify(userTodos));
 }
 
 function init() {
-  loadTodoDate();
-  loadUser();
+  if(!checkManageConnected()){
+    //manager 권한이 아닌 경우! 해당 페이지 접근 불가 
+    location.replace('index.html');
+  }
+  const todoDate = loadTodoDate();
+  const todoUser = loadUser();
+  const todoForm = document.querySelector('.in-todo__form'),
+      todoInsertBtn = todoForm.querySelector('i');
+  
+  const todos = getTodos(todoDate, todoUser);
+  loadTodos(todos);
+  todoForm.addEventListener('submit', function(){
+    event.preventDefault();
+    insertTodo(todoUser, todoDate, todos);
+  } );
+  todoInsertBtn.addEventListener('click', function (){
+       insertTodo(todoUser, todoDate, todos);
+  } );
 }
 
 init();

@@ -17,6 +17,18 @@ function checkConnected(){
     }
 }
 
+function checkManageConnected(){
+    const currentUser = getCurrentUser();
+    
+    if(currentUser === null){
+        return false;
+    }else if(currentUser.id === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function outCurrentUser(){
     localStorage.removeItem(LS_CURRENTUSER);
     location.replace('index.html');

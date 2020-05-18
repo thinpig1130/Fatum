@@ -47,4 +47,6 @@ function loadTodoDate() {
   afterIcon.addEventListener('click', function () {
     setTodoDate(dateId, 1);
   });
+
+  return dateId;
 }
