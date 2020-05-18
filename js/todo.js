@@ -97,11 +97,9 @@ function init() {
   if (!checkConnected()) {
     location.replace('index.html');
   }
-
   if (getCurrentUser().id !== 0) {
     document.querySelector('.header__todo-manager').classList.add(CN_HIDING);
   }
-
   loadTodoDate();
   loadTodos(getDateTodos());
 }
