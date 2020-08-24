@@ -55,7 +55,6 @@ function loadCurrentUser(){
     }
 }
 
-
 function init(){
     if(checkConnected()){
         loadCurrentUser();
