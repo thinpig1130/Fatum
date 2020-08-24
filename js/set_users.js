@@ -131,6 +131,7 @@ function usersLoad() {
 }
 
 function init() {
+  
   const form = document.querySelector('.musers__form'),
     minusBtn = document.querySelector('.fa-user-minus');
 
